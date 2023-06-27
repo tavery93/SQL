@@ -1,0 +1,38 @@
+--Create a restaurant database
+
+CREATE TABLE restaurant (ID INTEGER PRIMARY KEY, Name TEXT, Margin TEXT, Category TEXT, Price INTEGER);
+
+INSERT INTO restaurant VALUES (1,"APP 1", "STAR", "A",10);
+INSERT INTO restaurant VALUES (2,"APP 2", "PLOWHORSE", "A",10);
+INSERT INTO restaurant VALUES (3,"APP 3", "PUZZLE", "A",8);
+INSERT INTO restaurant VALUES (4,"APP 4", "STAR", "A",8);
+INSERT INTO restaurant VALUES (5, "APP 5", "DOG","A",9);
+
+INSERT INTO restaurant VALUES (6,"ENTREE 1", "STAR", "E",14);
+INSERT INTO restaurant VALUES (7,"ENTREE 2", "STAR", "E",16);
+INSERT INTO restaurant VALUES (8, "ENTREE 3", "PLOWHORSE", "E",15);
+INSERT INTO restaurant VALUES (9, "ENTREE 4", "PLOWHORSE", "E",18);
+INSERT INTO restaurant VALUES (10, "ENTREE 5", "DOG", "E",18);
+INSERT INTO restaurant VALUES (11, "ENTREE 6", "PUZZLE", "E",15);
+INSERT INTO restaurant VALUES (12, "ENTREE 7", "STAR", "E",17);
+
+INSERT INTO restaurant VALUES (13, "DESERT 1", "STAR", "D", 8);
+INSERT INTO restaurant VALUES (14, "DESERT 2", "DOG", "D", 8);
+INSERT INTO restaurant VALUES (15, "DESERT 3", "PUZZLE", "D", 7);
+
+
+-- Display the database by Highest Price
+SELECT * FROM restaurant
+ORDER BY Price desc;
+
+
+--Display the Average Price of the restaurant items
+SELECT AVG(price) "avg item price"
+FROM restaurant;
+
+
+--Display the 3 lowest priced entrees
+SELECT Name, Category, Price FROM restaurant
+WHERE Category = "E"
+ORDER BY price
+LIMIT 5
